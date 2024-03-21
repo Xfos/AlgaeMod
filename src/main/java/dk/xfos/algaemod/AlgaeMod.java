@@ -1,6 +1,10 @@
 package dk.xfos.algaemod;
 
 import com.mojang.logging.LogUtils;
+import dk.xfos.algaemod.item.ModCreativeModTabs;
+import dk.xfos.algaemod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -26,6 +30,10 @@ public class AlgaeMod {
     public AlgaeMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+
+        ModCreativeModTabs.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -45,7 +53,10 @@ public class AlgaeMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)   {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)   {
+            event.accept(ModItems.ALGAE);
+            event.accept(ModItems.BLUE_ALGAE);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
