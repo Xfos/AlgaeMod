@@ -1,5 +1,8 @@
 {
   "item.algaemod.algae": "Algae",
   "item.algaemod.blue_algae": "Blue Algae",
+
+  "block.algaemod.algae_block": "Algae Block",
+
   "creativtab.algae_tab": "Algae Tab"
 }

@@ -1,6 +1,7 @@
 package dk.xfos.algaemod;
 
 import com.mojang.logging.LogUtils;
+import dk.xfos.algaemod.block.ModBlocks;
 import dk.xfos.algaemod.item.ModCreativeModTabs;
 import dk.xfos.algaemod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
@@ -31,6 +32,7 @@ public class AlgaeMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         ModCreativeModTabs.register(modEventBus);
 

@@ -1,6 +1,7 @@
 package dk.xfos.algaemod.item;
 
 import dk.xfos.algaemod.AlgaeMod;
+import dk.xfos.algaemod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -19,6 +20,7 @@ public class ModCreativeModTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.ALGAE.get());
                         pOutput.accept(ModItems.BLUE_ALGAE.get());
+                        pOutput.accept(ModBlocks.ALGAE_BLOCK.get());
                     })
                     .build());
 
